@@ -5,7 +5,9 @@ import "./Expenses.css";
 export default function Expenses(props) {
   const expenses = props.items;
 
+
   return (
+    
     <Card className="expenses">
       <ExpenseItem
         date={expenses[0].date}

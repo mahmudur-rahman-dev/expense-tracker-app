@@ -7,7 +7,6 @@ export default function Expenses(props) {
 
 
   return (
-    
     <Card className="expenses">
       <ExpenseItem
         date={expenses[0].date}

@@ -12,20 +12,27 @@ export default function Expenses(props) {
     setfilteredYear(selectedYear);
   };
 
+  const filteredExpenses = props.items.filter(expense => {
+    return expense.date.getFullYear() == filteredYear;
+  });
+
   return (
     <Card className="expenses">
       <ExpensesFilter
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {props.items.map((expense) => (
-        <ExpenseItem
-          key={expense.id} //for uniquely identify the value to not loading every component in each addition
+
+      {/* {console.log(props.items)} */}
+
+      {filteredExpenses.map(expense => { 
+        return <ExpenseItem
+          key={expense.id}
           date={expense.date}
           title={expense.title}
           price={expense.price}
         />
-      ))}
+      })}
     </Card>
   );
 }

@@ -10,6 +10,7 @@ function App() {
 
   const addExpenseHandler = expense => {
     console.log(expense);
+    
   };
 
   return (

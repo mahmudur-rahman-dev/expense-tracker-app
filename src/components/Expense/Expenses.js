@@ -20,6 +20,7 @@ export default function Expenses(props) {
       />
       {props.items.map((expense) => (
         <ExpenseItem
+          key={expense.id} //for uniquely identify the value to not loading every component in each addition
           date={expense.date}
           title={expense.title}
           price={expense.price}
